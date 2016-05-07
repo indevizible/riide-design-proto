@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15C6CA3B1CD682B8004D67EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */; };
+		15C6CA3D1CD682B8004D67EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA3C1CD682B8004D67EC /* ViewController.swift */; };
+		15C6CA401CD682B8004D67EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA3E1CD682B8004D67EC /* Main.storyboard */; };
+		15C6CA421CD682B8004D67EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA411CD682B8004D67EC /* Assets.xcassets */; };
+		15C6CA451CD682B8004D67EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA431CD682B8004D67EC /* LaunchScreen.storyboard */; };
+		15C6CA501CD682B8004D67EC /* Riide_ProtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA4F1CD682B8004D67EC /* Riide_ProtoTests.swift */; };
+		15C6CA5B1CD682B8004D67EC /* Riide_ProtoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA5A1CD682B8004D67EC /* Riide_ProtoUITests.swift */; };
+		15C6CA6A1CD683C5004D67EC /* riideFontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA691CD683C5004D67EC /* riideFontTheme.swift */; };
+		15C6CA6D1CD6848F004D67EC /* riideColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA6C1CD6848F004D67EC /* riideColorTheme.swift */; };
+		15C6CA701CD685FC004D67EC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA6F1CD685FC004D67EC /* UIColorExtension.swift */; };
+		15C6CA711CD6864E004D67EC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA6F1CD685FC004D67EC /* UIColorExtension.swift */; };
+		15C6CA721CD6864F004D67EC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA6F1CD685FC004D67EC /* UIColorExtension.swift */; };
+		15C6CA741CD68733004D67EC /* fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA731CD68733004D67EC /* fonts.swift */; };
+		15C6CA751CD68733004D67EC /* fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA731CD68733004D67EC /* fonts.swift */; };
+		15C6CA761CD68733004D67EC /* fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA731CD68733004D67EC /* fonts.swift */; };
+		15C6CA7D1CD687EB004D67EC /* maisonneuebold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA791CD687EB004D67EC /* maisonneuebold.ttf */; };
+		15C6CA7E1CD687EB004D67EC /* maisonneuebold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA791CD687EB004D67EC /* maisonneuebold.ttf */; };
+		15C6CA7F1CD687EB004D67EC /* maisonneuebold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA791CD687EB004D67EC /* maisonneuebold.ttf */; };
+		15C6CA801CD687EB004D67EC /* maisonneuebolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7A1CD687EB004D67EC /* maisonneuebolditalic.ttf */; };
+		15C6CA811CD687EB004D67EC /* maisonneuebolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7A1CD687EB004D67EC /* maisonneuebolditalic.ttf */; };
+		15C6CA821CD687EB004D67EC /* maisonneuebolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7A1CD687EB004D67EC /* maisonneuebolditalic.ttf */; };
+		15C6CA831CD687EB004D67EC /* maisonneuebook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7B1CD687EB004D67EC /* maisonneuebook.ttf */; };
+		15C6CA841CD687EB004D67EC /* maisonneuebook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7B1CD687EB004D67EC /* maisonneuebook.ttf */; };
+		15C6CA851CD687EB004D67EC /* maisonneuebook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7B1CD687EB004D67EC /* maisonneuebook.ttf */; };
+		15C6CA861CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7C1CD687EB004D67EC /* maisonneuebookitalic.ttf */; };
+		15C6CA871CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7C1CD687EB004D67EC /* maisonneuebookitalic.ttf */; };
+		15C6CA881CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA7C1CD687EB004D67EC /* maisonneuebookitalic.ttf */; };
+		15C6CA8A1CD692D2004D67EC /* riideContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA891CD692D2004D67EC /* riideContentStyle.swift */; };
+		15C6CA8B1CD692D2004D67EC /* riideContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA891CD692D2004D67EC /* riideContentStyle.swift */; };
+		15C6CA8C1CD692D2004D67EC /* riideContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA891CD692D2004D67EC /* riideContentStyle.swift */; };
+		15C6CA921CD698B0004D67EC /* fontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA911CD698B0004D67EC /* fontWeight.swift */; };
+		15C6CA931CD698B0004D67EC /* fontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA911CD698B0004D67EC /* fontWeight.swift */; };
+		15C6CA941CD698B0004D67EC /* fontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA911CD698B0004D67EC /* fontWeight.swift */; };
+		15C6CA971CD69E5A004D67EC /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA961CD69E5A004D67EC /* landingVC.swift */; };
+		15C6CA981CD69E5A004D67EC /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA961CD69E5A004D67EC /* landingVC.swift */; };
+		15C6CA991CD69E5A004D67EC /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA961CD69E5A004D67EC /* landingVC.swift */; };
+		15C6CA9B1CD69F8F004D67EC /* riide_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */; };
+		15C6CA9C1CD69F8F004D67EC /* riide_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */; };
+		15C6CA9D1CD69F8F004D67EC /* riide_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */; };
+		15C6CAA11CD6A76B004D67EC /* riideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA9F1CD6A76B004D67EC /* riideButton.swift */; };
+		15C6CAA21CD6A76B004D67EC /* riideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA9F1CD6A76B004D67EC /* riideButton.swift */; };
+		15C6CAA31CD6A76B004D67EC /* riideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA9F1CD6A76B004D67EC /* riideButton.swift */; };
+		15C6CAA41CD6A76B004D67EC /* riideButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CAA01CD6A76B004D67EC /* riideButtonType.swift */; };
+		15C6CAA51CD6A76B004D67EC /* riideButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CAA01CD6A76B004D67EC /* riideButtonType.swift */; };
+		15C6CAA61CD6A76B004D67EC /* riideButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CAA01CD6A76B004D67EC /* riideButtonType.swift */; };
+		15C6CAA81CD6A926004D67EC /* riideFontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA691CD683C5004D67EC /* riideFontTheme.swift */; };
+		15C6CAA91CD6A927004D67EC /* riideFontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA691CD683C5004D67EC /* riideFontTheme.swift */; };
+		15C6CAAA1CD6A9EB004D67EC /* riideColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA6C1CD6848F004D67EC /* riideColorTheme.swift */; };
+		15C6CAAB1CD6A9EC004D67EC /* riideColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA6C1CD6848F004D67EC /* riideColorTheme.swift */; };
+		15C6CAB11CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */; };
+		15C6CAB21CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */; };
+		15C6CAB31CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15C6CA4C1CD682B8004D67EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15C6CA2F1CD682B8004D67EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15C6CA361CD682B8004D67EC;
+			remoteInfo = "Riide Proto";
+		};
+		15C6CA571CD682B8004D67EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15C6CA2F1CD682B8004D67EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15C6CA361CD682B8004D67EC;
+			remoteInfo = "Riide Proto";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15C6CA371CD682B8004D67EC /* Riide Proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Riide Proto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		15C6CA3C1CD682B8004D67EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		15C6CA3F1CD682B8004D67EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15C6CA411CD682B8004D67EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15C6CA441CD682B8004D67EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		15C6CA461CD682B8004D67EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15C6CA4B1CD682B8004D67EC /* Riide ProtoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Riide ProtoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C6CA4F1CD682B8004D67EC /* Riide_ProtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riide_ProtoTests.swift; sourceTree = "<group>"; };
+		15C6CA511CD682B8004D67EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15C6CA561CD682B8004D67EC /* Riide ProtoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Riide ProtoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C6CA5A1CD682B8004D67EC /* Riide_ProtoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Riide_ProtoUITests.swift; sourceTree = "<group>"; };
+		15C6CA5C1CD682B8004D67EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15C6CA691CD683C5004D67EC /* riideFontTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = riideFontTheme.swift; path = Theme/riideFontTheme.swift; sourceTree = "<group>"; };
+		15C6CA6C1CD6848F004D67EC /* riideColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideColorTheme.swift; sourceTree = "<group>"; };
+		15C6CA6F1CD685FC004D67EC /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		15C6CA731CD68733004D67EC /* fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fonts.swift; sourceTree = "<group>"; };
+		15C6CA791CD687EB004D67EC /* maisonneuebold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = maisonneuebold.ttf; sourceTree = "<group>"; };
+		15C6CA7A1CD687EB004D67EC /* maisonneuebolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = maisonneuebolditalic.ttf; sourceTree = "<group>"; };
+		15C6CA7B1CD687EB004D67EC /* maisonneuebook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = maisonneuebook.ttf; sourceTree = "<group>"; };
+		15C6CA7C1CD687EB004D67EC /* maisonneuebookitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = maisonneuebookitalic.ttf; sourceTree = "<group>"; };
+		15C6CA891CD692D2004D67EC /* riideContentStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideContentStyle.swift; sourceTree = "<group>"; };
+		15C6CA911CD698B0004D67EC /* fontWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fontWeight.swift; sourceTree = "<group>"; };
+		15C6CA961CD69E5A004D67EC /* landingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = landingVC.swift; sourceTree = "<group>"; };
+		15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = riide_background.mp4; sourceTree = "<group>"; };
+		15C6CA9F1CD6A76B004D67EC /* riideButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideButton.swift; sourceTree = "<group>"; };
+		15C6CAA01CD6A76B004D67EC /* riideButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideButtonType.swift; sourceTree = "<group>"; };
+		15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = batteryDashboardVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15C6CA341CD682B8004D67EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C6CA481CD682B8004D67EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C6CA531CD682B8004D67EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15C6CA2E1CD682B8004D67EC = {
+			isa = PBXGroup;
+			children = (
+				15C6CA391CD682B8004D67EC /* Riide Proto */,
+				15C6CA4E1CD682B8004D67EC /* Riide ProtoTests */,
+				15C6CA591CD682B8004D67EC /* Riide ProtoUITests */,
+				15C6CA381CD682B8004D67EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		15C6CA381CD682B8004D67EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA371CD682B8004D67EC /* Riide Proto.app */,
+				15C6CA4B1CD682B8004D67EC /* Riide ProtoTests.xctest */,
+				15C6CA561CD682B8004D67EC /* Riide ProtoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15C6CA391CD682B8004D67EC /* Riide Proto */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */,
+				15C6CA771CD6879C004D67EC /* Resources */,
+				15C6CA6E1CD685E5004D67EC /* Extensions */,
+				15C6CA3C1CD682B8004D67EC /* ViewController.swift */,
+				15C6CAA71CD6A76F004D67EC /* buttons */,
+				15C6CA6B1CD683CB004D67EC /* Theme */,
+				15C6CA951CD69B6D004D67EC /* Storyboards */,
+				15C6CA411CD682B8004D67EC /* Assets.xcassets */,
+				15C6CA431CD682B8004D67EC /* LaunchScreen.storyboard */,
+				15C6CA461CD682B8004D67EC /* Info.plist */,
+			);
+			path = "Riide Proto";
+			sourceTree = "<group>";
+		};
+		15C6CA4E1CD682B8004D67EC /* Riide ProtoTests */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA4F1CD682B8004D67EC /* Riide_ProtoTests.swift */,
+				15C6CA511CD682B8004D67EC /* Info.plist */,
+			);
+			path = "Riide ProtoTests";
+			sourceTree = "<group>";
+		};
+		15C6CA591CD682B8004D67EC /* Riide ProtoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA5A1CD682B8004D67EC /* Riide_ProtoUITests.swift */,
+				15C6CA5C1CD682B8004D67EC /* Info.plist */,
+			);
+			path = "Riide ProtoUITests";
+			sourceTree = "<group>";
+		};
+		15C6CA6B1CD683CB004D67EC /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA691CD683C5004D67EC /* riideFontTheme.swift */,
+				15C6CA731CD68733004D67EC /* fonts.swift */,
+				15C6CA911CD698B0004D67EC /* fontWeight.swift */,
+				15C6CA6C1CD6848F004D67EC /* riideColorTheme.swift */,
+				15C6CA891CD692D2004D67EC /* riideContentStyle.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
+		15C6CA6E1CD685E5004D67EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA6F1CD685FC004D67EC /* UIColorExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		15C6CA771CD6879C004D67EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA9E1CD6A05B004D67EC /* videos */,
+				15C6CA781CD687B6004D67EC /* fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		15C6CA781CD687B6004D67EC /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA791CD687EB004D67EC /* maisonneuebold.ttf */,
+				15C6CA7A1CD687EB004D67EC /* maisonneuebolditalic.ttf */,
+				15C6CA7B1CD687EB004D67EC /* maisonneuebook.ttf */,
+				15C6CA7C1CD687EB004D67EC /* maisonneuebookitalic.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		15C6CA951CD69B6D004D67EC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA3E1CD682B8004D67EC /* Main.storyboard */,
+				15C6CA961CD69E5A004D67EC /* landingVC.swift */,
+				15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		15C6CA9E1CD6A05B004D67EC /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */,
+			);
+			name = videos;
+			sourceTree = "<group>";
+		};
+		15C6CAA71CD6A76F004D67EC /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				15C6CA9F1CD6A76B004D67EC /* riideButton.swift */,
+				15C6CAA01CD6A76B004D67EC /* riideButtonType.swift */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15C6CA361CD682B8004D67EC /* Riide Proto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15C6CA5F1CD682B8004D67EC /* Build configuration list for PBXNativeTarget "Riide Proto" */;
+			buildPhases = (
+				15C6CA331CD682B8004D67EC /* Sources */,
+				15C6CA341CD682B8004D67EC /* Frameworks */,
+				15C6CA351CD682B8004D67EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Riide Proto";
+			productName = "Riide Proto";
+			productReference = 15C6CA371CD682B8004D67EC /* Riide Proto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		15C6CA4A1CD682B8004D67EC /* Riide ProtoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15C6CA621CD682B8004D67EC /* Build configuration list for PBXNativeTarget "Riide ProtoTests" */;
+			buildPhases = (
+				15C6CA471CD682B8004D67EC /* Sources */,
+				15C6CA481CD682B8004D67EC /* Frameworks */,
+				15C6CA491CD682B8004D67EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15C6CA4D1CD682B8004D67EC /* PBXTargetDependency */,
+			);
+			name = "Riide ProtoTests";
+			productName = "Riide ProtoTests";
+			productReference = 15C6CA4B1CD682B8004D67EC /* Riide ProtoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		15C6CA551CD682B8004D67EC /* Riide ProtoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15C6CA651CD682B8004D67EC /* Build configuration list for PBXNativeTarget "Riide ProtoUITests" */;
+			buildPhases = (
+				15C6CA521CD682B8004D67EC /* Sources */,
+				15C6CA531CD682B8004D67EC /* Frameworks */,
+				15C6CA541CD682B8004D67EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15C6CA581CD682B8004D67EC /* PBXTargetDependency */,
+			);
+			name = "Riide ProtoUITests";
+			productName = "Riide ProtoUITests";
+			productReference = 15C6CA561CD682B8004D67EC /* Riide ProtoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15C6CA2F1CD682B8004D67EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "VIRAKRI JINANGKUL";
+				TargetAttributes = {
+					15C6CA361CD682B8004D67EC = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = Q44N8Z5X6Y;
+					};
+					15C6CA4A1CD682B8004D67EC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 15C6CA361CD682B8004D67EC;
+					};
+					15C6CA551CD682B8004D67EC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 15C6CA361CD682B8004D67EC;
+					};
+				};
+			};
+			buildConfigurationList = 15C6CA321CD682B8004D67EC /* Build configuration list for PBXProject "Riide Proto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15C6CA2E1CD682B8004D67EC;
+			productRefGroup = 15C6CA381CD682B8004D67EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15C6CA361CD682B8004D67EC /* Riide Proto */,
+				15C6CA4A1CD682B8004D67EC /* Riide ProtoTests */,
+				15C6CA551CD682B8004D67EC /* Riide ProtoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15C6CA351CD682B8004D67EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C6CA451CD682B8004D67EC /* LaunchScreen.storyboard in Resources */,
+				15C6CA421CD682B8004D67EC /* Assets.xcassets in Resources */,
+				15C6CA861CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */,
+				15C6CA401CD682B8004D67EC /* Main.storyboard in Resources */,
+				15C6CA831CD687EB004D67EC /* maisonneuebook.ttf in Resources */,
+				15C6CA7D1CD687EB004D67EC /* maisonneuebold.ttf in Resources */,
+				15C6CA801CD687EB004D67EC /* maisonneuebolditalic.ttf in Resources */,
+				15C6CA9B1CD69F8F004D67EC /* riide_background.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C6CA491CD682B8004D67EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C6CA841CD687EB004D67EC /* maisonneuebook.ttf in Resources */,
+				15C6CA871CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */,
+				15C6CA7E1CD687EB004D67EC /* maisonneuebold.ttf in Resources */,
+				15C6CA811CD687EB004D67EC /* maisonneuebolditalic.ttf in Resources */,
+				15C6CA9C1CD69F8F004D67EC /* riide_background.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C6CA541CD682B8004D67EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C6CA851CD687EB004D67EC /* maisonneuebook.ttf in Resources */,
+				15C6CA881CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */,
+				15C6CA7F1CD687EB004D67EC /* maisonneuebold.ttf in Resources */,
+				15C6CA821CD687EB004D67EC /* maisonneuebolditalic.ttf in Resources */,
+				15C6CA9D1CD69F8F004D67EC /* riide_background.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15C6CA331CD682B8004D67EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C6CA3D1CD682B8004D67EC /* ViewController.swift in Sources */,
+				15C6CAA11CD6A76B004D67EC /* riideButton.swift in Sources */,
+				15C6CA8A1CD692D2004D67EC /* riideContentStyle.swift in Sources */,
+				15C6CAB11CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
+				15C6CA971CD69E5A004D67EC /* landingVC.swift in Sources */,
+				15C6CA921CD698B0004D67EC /* fontWeight.swift in Sources */,
+				15C6CA6A1CD683C5004D67EC /* riideFontTheme.swift in Sources */,
+				15C6CAA41CD6A76B004D67EC /* riideButtonType.swift in Sources */,
+				15C6CA701CD685FC004D67EC /* UIColorExtension.swift in Sources */,
+				15C6CA3B1CD682B8004D67EC /* AppDelegate.swift in Sources */,
+				15C6CA741CD68733004D67EC /* fonts.swift in Sources */,
+				15C6CA6D1CD6848F004D67EC /* riideColorTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C6CA471CD682B8004D67EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C6CA931CD698B0004D67EC /* fontWeight.swift in Sources */,
+				15C6CAB21CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
+				15C6CA501CD682B8004D67EC /* Riide_ProtoTests.swift in Sources */,
+				15C6CA981CD69E5A004D67EC /* landingVC.swift in Sources */,
+				15C6CAAA1CD6A9EB004D67EC /* riideColorTheme.swift in Sources */,
+				15C6CA751CD68733004D67EC /* fonts.swift in Sources */,
+				15C6CA711CD6864E004D67EC /* UIColorExtension.swift in Sources */,
+				15C6CA8B1CD692D2004D67EC /* riideContentStyle.swift in Sources */,
+				15C6CAA21CD6A76B004D67EC /* riideButton.swift in Sources */,
+				15C6CAA81CD6A926004D67EC /* riideFontTheme.swift in Sources */,
+				15C6CAA51CD6A76B004D67EC /* riideButtonType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15C6CA521CD682B8004D67EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C6CA941CD698B0004D67EC /* fontWeight.swift in Sources */,
+				15C6CAB31CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
+				15C6CA5B1CD682B8004D67EC /* Riide_ProtoUITests.swift in Sources */,
+				15C6CA991CD69E5A004D67EC /* landingVC.swift in Sources */,
+				15C6CAAB1CD6A9EC004D67EC /* riideColorTheme.swift in Sources */,
+				15C6CA761CD68733004D67EC /* fonts.swift in Sources */,
+				15C6CA721CD6864F004D67EC /* UIColorExtension.swift in Sources */,
+				15C6CA8C1CD692D2004D67EC /* riideContentStyle.swift in Sources */,
+				15C6CAA31CD6A76B004D67EC /* riideButton.swift in Sources */,
+				15C6CAA91CD6A927004D67EC /* riideFontTheme.swift in Sources */,
+				15C6CAA61CD6A76B004D67EC /* riideButtonType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15C6CA4D1CD682B8004D67EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15C6CA361CD682B8004D67EC /* Riide Proto */;
+			targetProxy = 15C6CA4C1CD682B8004D67EC /* PBXContainerItemProxy */;
+		};
+		15C6CA581CD682B8004D67EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15C6CA361CD682B8004D67EC /* Riide Proto */;
+			targetProxy = 15C6CA571CD682B8004D67EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15C6CA3E1CD682B8004D67EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15C6CA3F1CD682B8004D67EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		15C6CA431CD682B8004D67EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15C6CA441CD682B8004D67EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15C6CA5D1CD682B8004D67EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		15C6CA5E1CD682B8004D67EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15C6CA601CD682B8004D67EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Riide Proto/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.app.Riide-Proto";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		15C6CA611CD682B8004D67EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Riide Proto/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.app.Riide-Proto";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		15C6CA631CD682B8004D67EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Riide ProtoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.app.Riide-ProtoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riide Proto.app/Riide Proto";
+			};
+			name = Debug;
+		};
+		15C6CA641CD682B8004D67EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Riide ProtoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.app.Riide-ProtoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riide Proto.app/Riide Proto";
+			};
+			name = Release;
+		};
+		15C6CA661CD682B8004D67EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Riide ProtoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.app.Riide-ProtoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Riide Proto";
+			};
+			name = Debug;
+		};
+		15C6CA671CD682B8004D67EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Riide ProtoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.app.Riide-ProtoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Riide Proto";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15C6CA321CD682B8004D67EC /* Build configuration list for PBXProject "Riide Proto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C6CA5D1CD682B8004D67EC /* Debug */,
+				15C6CA5E1CD682B8004D67EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15C6CA5F1CD682B8004D67EC /* Build configuration list for PBXNativeTarget "Riide Proto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C6CA601CD682B8004D67EC /* Debug */,
+				15C6CA611CD682B8004D67EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15C6CA621CD682B8004D67EC /* Build configuration list for PBXNativeTarget "Riide ProtoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C6CA631CD682B8004D67EC /* Debug */,
+				15C6CA641CD682B8004D67EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15C6CA651CD682B8004D67EC /* Build configuration list for PBXNativeTarget "Riide ProtoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15C6CA661CD682B8004D67EC /* Debug */,
+				15C6CA671CD682B8004D67EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15C6CA2F1CD682B8004D67EC /* Project object */;
+}
