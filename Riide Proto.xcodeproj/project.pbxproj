@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		154637111CDE978D00D705A6 /* topViewIntroFlowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154637101CDE978D00D705A6 /* topViewIntroFlowVC.swift */; };
 		154637131CDEEA2E00D705A6 /* topViewGetRiideFlowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154637121CDEEA2E00D705A6 /* topViewGetRiideFlowVC.swift */; };
+		154637161CDF389F00D705A6 /* CharPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154637141CDF389F00D705A6 /* CharPageControl.swift */; };
+		154637181CDF39BD00D705A6 /* pagination.otf in Resources */ = {isa = PBXBuildFile; fileRef = 154637171CDF39BD00D705A6 /* pagination.otf */; };
+		15C6510A1CDF41FF00B0B79B /* Indicator-Circle.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15C651091CDF41FF00B0B79B /* Indicator-Circle.otf */; };
+		15C6510C1CDF4B2700B0B79B /* controlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6510B1CDF4B2700B0B79B /* controlPanelVC.swift */; };
 		15C6CA3B1CD682B8004D67EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */; };
 		15C6CA3D1CD682B8004D67EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA3C1CD682B8004D67EC /* ViewController.swift */; };
 		15C6CA401CD682B8004D67EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA3E1CD682B8004D67EC /* Main.storyboard */; };
@@ -80,6 +84,11 @@
 /* Begin PBXFileReference section */
 		154637101CDE978D00D705A6 /* topViewIntroFlowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topViewIntroFlowVC.swift; sourceTree = "<group>"; };
 		154637121CDEEA2E00D705A6 /* topViewGetRiideFlowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topViewGetRiideFlowVC.swift; sourceTree = "<group>"; };
+		154637141CDF389F00D705A6 /* CharPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharPageControl.swift; sourceTree = "<group>"; };
+		154637151CDF389F00D705A6 /* CharPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharPageControl.h; sourceTree = "<group>"; };
+		154637171CDF39BD00D705A6 /* pagination.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pagination.otf; sourceTree = "<group>"; };
+		15C651091CDF41FF00B0B79B /* Indicator-Circle.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Indicator-Circle.otf"; sourceTree = "<group>"; };
+		15C6510B1CDF4B2700B0B79B /* controlPanelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = controlPanelVC.swift; sourceTree = "<group>"; };
 		15C6CA371CD682B8004D67EC /* Riide Proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Riide Proto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15C6CA3C1CD682B8004D67EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +230,8 @@
 		15C6CA781CD687B6004D67EC /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				15C651091CDF41FF00B0B79B /* Indicator-Circle.otf */,
+				154637171CDF39BD00D705A6 /* pagination.otf */,
 				15C6CA791CD687EB004D67EC /* maisonneuebold.ttf */,
 				15C6CA7A1CD687EB004D67EC /* maisonneuebolditalic.ttf */,
 				15C6CA7B1CD687EB004D67EC /* maisonneuebook.ttf */,
@@ -233,6 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				15C6CA3E1CD682B8004D67EC /* Main.storyboard */,
+				154637141CDF389F00D705A6 /* CharPageControl.swift */,
+				15C6510B1CDF4B2700B0B79B /* controlPanelVC.swift */,
+				154637151CDF389F00D705A6 /* CharPageControl.h */,
 				154637101CDE978D00D705A6 /* topViewIntroFlowVC.swift */,
 				154637121CDEEA2E00D705A6 /* topViewGetRiideFlowVC.swift */,
 				15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */,
@@ -362,6 +376,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154637181CDF39BD00D705A6 /* pagination.otf in Resources */,
+				15C6510A1CDF41FF00B0B79B /* Indicator-Circle.otf in Resources */,
 				15C6CA451CD682B8004D67EC /* LaunchScreen.storyboard in Resources */,
 				15C6CA421CD682B8004D67EC /* Assets.xcassets in Resources */,
 				15C6CA861CD687EB004D67EC /* maisonneuebookitalic.ttf in Resources */,
@@ -410,12 +426,14 @@
 				15C6CAB11CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
 				15C6CA921CD698B0004D67EC /* fontWeight.swift in Sources */,
 				15C6CA6A1CD683C5004D67EC /* riideFontTheme.swift in Sources */,
+				154637161CDF389F00D705A6 /* CharPageControl.swift in Sources */,
 				15C6CAA41CD6A76B004D67EC /* riideButtonType.swift in Sources */,
 				154637131CDEEA2E00D705A6 /* topViewGetRiideFlowVC.swift in Sources */,
 				15C6CA701CD685FC004D67EC /* UIColorExtension.swift in Sources */,
 				15C6CA3B1CD682B8004D67EC /* AppDelegate.swift in Sources */,
 				15C6CA741CD68733004D67EC /* fonts.swift in Sources */,
 				154637111CDE978D00D705A6 /* topViewIntroFlowVC.swift in Sources */,
+				15C6510C1CDF4B2700B0B79B /* controlPanelVC.swift in Sources */,
 				15C6CA6D1CD6848F004D67EC /* riideColorTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

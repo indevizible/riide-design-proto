@@ -30,6 +30,7 @@
 		<string>maisonneuebolditalic.ttf</string>
 		<string>maisonneuebook.ttf</string>
 		<string>maisonneuebookitalic.ttf</string>
+		<string>Indicator-Circle.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

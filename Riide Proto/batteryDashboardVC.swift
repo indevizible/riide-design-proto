@@ -11,6 +11,9 @@ import UIKit
 import AVKit
 import AVFoundation
 
+let topBoxEdgeInset = UIEdgeInsets(top: 20, left: 15, bottom: 72, right: 15)
+
+
 let topBox1HeadlineText = "Riide\neverywhere."
 let topBox1HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
 
@@ -116,6 +119,10 @@ class batteryDashboardVC: UIViewController {
 
     @IBOutlet var topBox4Headline: UILabel!
     @IBOutlet var topBox4HeadlineDes: UILabel!
+    
+    @IBOutlet var topBoxPageIndicatorBackgroundLabel: UILabel!
+    @IBOutlet var topBoxPageIndicatorLabel: CharPageControl!
+    
 
      var player: AVPlayer?
     
@@ -127,10 +134,11 @@ class batteryDashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gestureToControlPanel(view, view: view)
 
-
-        
-        
+        topBoxPageIndicatorBackgroundLabel.textColor = riideColorTheme.init().riideDarkGray
+        topBoxPageIndicatorLabel.currentColor = riideColorTheme.init().riideBlack
+        topBoxPageIndicatorLabel.defaultColor = UIColor.clearColor()
         
         grayCircleLayer=createShapeLayer(riideColorTheme.init().riideLightGray, circularPlacement: true)
         greenCircleLayer=createShapeLayer(riideColorTheme.init().riideGreen, circularPlacement: false)
@@ -294,10 +302,10 @@ class batteryDashboardVC: UIViewController {
         
         UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
             
-            self.topBox1LeadingConstraint.constant = 10
-            self.topBox1TrailingConstraint.constant = 10
-            self.topBox1TopConstraint.constant = 20
-            self.topBox1BottomConstraint.constant = 72
+            self.topBox1LeadingConstraint.constant = topBoxEdgeInset.left
+            self.topBox1TrailingConstraint.constant = topBoxEdgeInset.right
+            self.topBox1TopConstraint.constant = topBoxEdgeInset.top
+            self.topBox1BottomConstraint.constant = topBoxEdgeInset.bottom
             
             self.topBox1View.layoutIfNeeded()
             
@@ -363,9 +371,9 @@ class batteryDashboardVC: UIViewController {
             
             
             self.topBox3Headline.transform = CGAffineTransformMakeTranslation(0, -12)
-            self.topBox3HeadlineDesBottomConstraint.constant = 72 + 24 * 4
-            self.topBox3HeadlineLeftConstraint.constant = 24 + 10
-            self.topBox3HeadlineDesLeftConstraint.constant = 24 + 10
+            self.topBox3HeadlineDesBottomConstraint.constant = topBoxEdgeInset.bottom + 24 * 4
+            self.topBox3HeadlineLeftConstraint.constant = 24 + topBoxEdgeInset.left
+            self.topBox3HeadlineDesLeftConstraint.constant = 24 + topBoxEdgeInset.left
             
             self.topBox3LeadingConstraint.constant = 0
             self.topBox3TrailingConstraint.constant = 0
@@ -377,7 +385,7 @@ class batteryDashboardVC: UIViewController {
             self.topBox3HeadlineDes.alpha = 0
             }, completion: nil)
         
-        UIView.animateWithDuration(0.4, delay: 0, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
             
             self.topBox3ImageCenterXBigConstraint.priority = 900
             self.topBox3ImageCenterYBigConstraint.priority = 900
@@ -392,7 +400,7 @@ class batteryDashboardVC: UIViewController {
             self.topBox3View.layoutIfNeeded()
             }, completion: nil)
         
-        UIView.animateWithDuration(0.6, delay: 0.2, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.4, delay: 0.2, options: .CurveEaseOut, animations: {
             self.topBox3UnderlayImage.alpha = 1
             }, completion: nil)
         
@@ -423,10 +431,10 @@ class batteryDashboardVC: UIViewController {
             self.topBox3HeadlineLeftConstraint.constant = 24
             self.topBox3HeadlineDesLeftConstraint.constant = 24
             
-            self.topBox3LeadingConstraint.constant = 10
-            self.topBox3TrailingConstraint.constant = 10
-            self.topBox3TopConstraint.constant = 20
-            self.topBox3BottomConstraint.constant = 72
+            self.topBox3LeadingConstraint.constant = topBoxEdgeInset.left
+            self.topBox3TrailingConstraint.constant = topBoxEdgeInset.right
+            self.topBox3TopConstraint.constant = topBoxEdgeInset.top
+            self.topBox3BottomConstraint.constant = topBoxEdgeInset.bottom
             
             self.topBox3View.layoutIfNeeded()
             
@@ -609,6 +617,12 @@ class batteryDashboardVC: UIViewController {
         }
         else if topBoxScrollView == scrollView {
             print(scrollView.contentOffset.x)
+            
+            let currentPage = (CGFloat(4) * scrollView.contentOffset.x)/scrollView.contentSize.width
+            if currentPage >= 0 && currentPage <= 4 {
+                topBoxPageIndicatorLabel.currentPage = currentPage
+            }
+            
         }
 //        transitionLinearToCircular(CGFloat(scrollPercentage))
     }

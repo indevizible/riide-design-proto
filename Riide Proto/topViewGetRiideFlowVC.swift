@@ -60,10 +60,10 @@ class topViewGetRiideFlowVC: UIViewController {
         self.riidePassDetailScrollView.alpha = 0
         self.subscribeButton.alpha = 0
         
-        self.riidePassLogoImage.transform = CGAffineTransformMakeTranslation(0, 32)
-        self.riidePassDescriptionLabel.transform = CGAffineTransformMakeTranslation(0, 32+8)
-        self.riidePassDetailScrollView.transform = CGAffineTransformMakeTranslation(0, 32+8*2)
-        self.subscribeButton.transform = CGAffineTransformMakeTranslation(0, 32+8*3)
+        self.riidePassLogoImage.transform = CGAffineTransformMakeTranslation(0, 48)
+        self.riidePassDescriptionLabel.transform = CGAffineTransformMakeTranslation(0, 48+16)
+        self.riidePassDetailScrollView.transform = CGAffineTransformMakeTranslation(0, 48+16*2)
+        self.subscribeButton.transform = CGAffineTransformMakeTranslation(0, 48+16*3)
         riidePassDetailScrollView.backgroundColor = riideColorTheme.init().riideWhisperGray
         subscribeButton.type = .DarkButton
         riidePassDescriptionLabel.attributedText = riideFontTheme.BodyText(introBox3RiidePassDescription, alignment: .Center)
@@ -83,22 +83,22 @@ class topViewGetRiideFlowVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(0.2, delay: 0.2, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.1, delay: 0.10, options: .CurveEaseOut, animations: {
             self.riidePassLogoImage.alpha = 1
             self.riidePassLogoImage.transform = CGAffineTransformMakeTranslation(0, 0)
             
             }, completion: nil)
-        UIView.animateWithDuration(0.22, delay: 0.2, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.1, delay: 0.10, options: .CurveEaseOut, animations: {
             self.riidePassDescriptionLabel.alpha = 1
             self.riidePassDescriptionLabel.transform = CGAffineTransformMakeTranslation(0, 0)
             
             }, completion: nil)
-        UIView.animateWithDuration(0.24, delay: 0.2, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.1, delay: 0.10, options: .CurveEaseOut, animations: {
             self.riidePassDetailScrollView.alpha = 1
             self.riidePassDetailScrollView.transform = CGAffineTransformMakeTranslation(0, 0)
             
             }, completion: nil)
-        UIView.animateWithDuration(0.26, delay: 0.2, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.1, delay: 0.10, options: .CurveEaseOut, animations: {
             self.subscribeButton.alpha = 1
             self.subscribeButton.transform = CGAffineTransformMakeTranslation(0, 0)
             
@@ -112,10 +112,10 @@ class topViewGetRiideFlowVC: UIViewController {
         
         UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations:{
             
-            self.wrapperLeadingConstraint.constant = 10
-            self.wrapperTrailingConstraint.constant = 10
-            self.wrapperTopConstraint.constant = 20
-            self.wrapperBottomConstraint.constant = 72
+            self.wrapperLeadingConstraint.constant = topBoxEdgeInset.left
+            self.wrapperTrailingConstraint.constant = topBoxEdgeInset.right
+            self.wrapperTopConstraint.constant = topBoxEdgeInset.top
+            self.wrapperBottomConstraint.constant = topBoxEdgeInset.bottom
 //
             self.view.layoutIfNeeded()
 //

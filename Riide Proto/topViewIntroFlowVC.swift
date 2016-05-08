@@ -115,10 +115,10 @@ class topViewIntroFlowVC: UIViewController {
         
         UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations:{
             
-            self.wrapperLeadingConstraint.constant = 10
-            self.wrapperTrailingConstraint.constant = 10
-            self.wrapperTopConstraint.constant = 20
-            self.wrapperBottomConstraint.constant = 72
+            self.wrapperLeadingConstraint.constant = topBoxEdgeInset.left
+            self.wrapperTrailingConstraint.constant = topBoxEdgeInset.right
+            self.wrapperTopConstraint.constant = topBoxEdgeInset.top
+            self.wrapperBottomConstraint.constant = topBoxEdgeInset.bottom
             
             self.view.layoutIfNeeded()
 
