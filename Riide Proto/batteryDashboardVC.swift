@@ -8,6 +8,20 @@
 
 
 import UIKit
+import AVKit
+import AVFoundation
+
+let topBox1HeadlineText = "Riide\neverywhere."
+let topBox1HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
+
+let topBox2HeadlineText = "Take a test Riide."
+let topBox2HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
+
+let topBox3HeadlineText = "Your Riide is\nwaiting for you."
+let topBox3HeadlineDesText = "No need to save up — RiidePass is the least expensive way to get around your city."
+
+let topBox4HeadlineText = "Riide accessories"
+let topBox4HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
 
 class batteryDashboardVC: UIViewController {
     
@@ -28,7 +42,33 @@ class batteryDashboardVC: UIViewController {
     @IBOutlet var riideLogoImage: UIImageView!
     
     @IBOutlet var topBox1View: UIView!
+    @IBOutlet var topBox2View: UIView!
+    @IBOutlet var topBox3View: UIView!
+    @IBOutlet var topBox4View: UIView!
     
+    @IBOutlet var topBox1ImageView: UIImageView!
+    @IBOutlet var topBox2ImageView: UIImageView!
+    @IBOutlet var topBox3ImageView: UIImageView!
+    @IBOutlet var topBox4ImageView: UIImageView!
+    
+    //constraint Top Box1
+    
+    @IBOutlet var topBox1LeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var topBox1TrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var topBox1TopConstraint: NSLayoutConstraint!
+    @IBOutlet var topBox1BottomConstraint: NSLayoutConstraint!
+    
+    
+    
+    //constraint Top Box3
+    
+    @IBOutlet var topBox3LeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var topBox3TrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var topBox3TopConstraint: NSLayoutConstraint!
+    @IBOutlet var topBox3BottomConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet var topContentView: UIView!
     
     let batteryLevel: CGFloat = 0.342
     
@@ -52,17 +92,7 @@ class batteryDashboardVC: UIViewController {
     
     var centerYDrawingView: CGFloat!
     
-    let topBox1HeadlineText = "Riide\neverywhere."
-    let topBox1HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
-    
-    let topBox2HeadlineText = "Take a test Riide."
-    let topBox2HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
-    
-    let topBox3HeadlineText = "Get your Riide."
-    let topBox3HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
-    
-    let topBox4HeadlineText = "Riide accessories"
-    let topBox4HeadlineDesText = "Be superhuman with electric power on demand. 20 mph. 25 mile range. Theft insurance included."
+
     
 //MARK: Text Outlet
     
@@ -76,13 +106,29 @@ class batteryDashboardVC: UIViewController {
     
     
     @IBOutlet var topBox1Headline: UILabel!
-    
     @IBOutlet var topBox1HeadlineDes: UILabel!
+
+    @IBOutlet var topBox2Headline: UILabel!
+    @IBOutlet var topBox2HeadlineDes: UILabel!
+
+    @IBOutlet var topBox3Headline: UILabel!
+    @IBOutlet var topBox3HeadlineDes: UILabel!
+
+    @IBOutlet var topBox4Headline: UILabel!
+    @IBOutlet var topBox4HeadlineDes: UILabel!
+
+     var player: AVPlayer?
     
+    func loopVideo() {
+        player?.seekToTime(kCMTimeZero)
+        player?.play()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+
 
         
         
@@ -123,17 +169,211 @@ class batteryDashboardVC: UIViewController {
         
         topBox1HeadlineDes.attributedText = riideFontTheme.BodyText(topBox1HeadlineDesText, color: riideColorTheme.init().riideWhite)
         
+        topBox2Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox2HeadlineText, color: riideColorTheme.init().riideWhite)
+        
+        topBox2HeadlineDes.attributedText = riideFontTheme.BodyText(topBox2HeadlineDesText, color: riideColorTheme.init().riideWhite)
+        
+        topBox3Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox3HeadlineText)
+        
+        topBox3HeadlineDes.attributedText = riideFontTheme.BodyText(topBox3HeadlineDesText, color: riideColorTheme.init().riideBlack)
+        
+        topBox4Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox4HeadlineText)
+        
+        topBox4HeadlineDes.attributedText = riideFontTheme.BodyText(topBox4HeadlineDesText, color: riideColorTheme.init().riideBlack)
+        
+        
+    }
+    var topBox1RectSize = CGRect()
+    var playerLayer = AVPlayerLayer()
+    let overlayLayer = CALayer()
+    override func viewDidAppear(animated: Bool) {
+        
+        topBox1RectSize = topBox1View.bounds
+        topBox1View.layer.insertSublayer(createLayerShadow(topBox1View.bounds), atIndex: 0)
+        topBox2View.layer.insertSublayer(createLayerShadow(topBox2View.bounds), atIndex: 0)
+        topBox3View.layer.insertSublayer(createLayerShadow(topBox3View.bounds), atIndex: 0)
+        topBox4View.layer.insertSublayer(createLayerShadow(topBox4View.bounds), atIndex: 0)
+        
+        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("riide_background", withExtension: "mp4")!
+        
+        player = AVPlayer(URL: videoURL)
+        player?.actionAtItemEnd = .None
+        player?.muted = true
+        
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerLayer.zPosition = -1
+        
+        playerLayer.frame = topBox1View.bounds
+        overlayLayer.frame = topBox1View.bounds
+        overlayLayer.backgroundColor = UIColor(patternImage: UIImage(named: "landingBackground")!).CGColor
+
+        
+        topBox1ImageView.layer.addSublayer(playerLayer)
+        topBox1ImageView.layer.addSublayer(overlayLayer)
+//        topBox1ImageView.layer.insertSublayer(playerLayer, atIndex: 0)
+        
+        topBox1ImageView.backgroundColor = UIColor(patternImage: UIImage(named: "landingBackground")!)
+        
+        player?.play()
+        
+        //loop video
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: "loopVideo",
+                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         object: nil)
+
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
+    @IBAction func topBox1ButtonDidTouch(sender: AnyObject) {
+        print("FUCK")
 
-        topBox1View.layer.insertSublayer(createLayerShadow(topBox1View.bounds), atIndex: 0)
-//        topBox1View.layer.addSublayer(createLayerShadow(topBox1View.bounds))
+        
+        topBox1Headline.alpha = 0
+        topBox1HeadlineDes.alpha = 0
+        customCAAnimations(0.2,
+                           timingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                           animation: {
+            self.playerLayer.frame = self.view.bounds
+            self.overlayLayer.frame = self.view.bounds
+
+        })
+        
+        
+        
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
+            
+            self.topBox1LeadingConstraint.constant = 0
+            self.topBox1TrailingConstraint.constant = 0
+            self.topBox1TopConstraint.constant = 0
+            self.topBox1BottomConstraint.constant = 0
+            
+            self.topBox1View.layoutIfNeeded()
+            }, completion: nil)
+        
+        self.performSegueWithIdentifier("segueToTopBox1Modal", sender: sender)
         
         
     }
+    
+    func topBox1TransitionBack(sender: AnyObject) {
+        
+        topBox1Headline.alpha = 0
+        topBox1HeadlineDes.alpha = 0
+        customCAAnimations(0.2,
+                           timingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                           animation: {
+                            self.playerLayer.frame = self.topBox1RectSize
+                            self.overlayLayer.frame = self.topBox1RectSize
+                            
+        })
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
+            
+            self.topBox1LeadingConstraint.constant = 10
+            self.topBox1TrailingConstraint.constant = 10
+            self.topBox1TopConstraint.constant = 20
+            self.topBox1BottomConstraint.constant = 72
+            
+            self.topBox1View.layoutIfNeeded()
+            
+            }, completion: nil)
+        self.topBox1Headline.transform = CGAffineTransformMakeTranslation(0, -24)
+        self.topBox1HeadlineDes.transform = CGAffineTransformMakeTranslation(0, -24)
+        UIView.animateWithDuration(0.15, delay: 0.2, options: .CurveEaseOut, animations: {
+            self.topBox1Headline.alpha = 1
+            self.topBox1Headline.transform = CGAffineTransformMakeTranslation(0, 0)
+            
+            }, completion: nil)
+        UIView.animateWithDuration(0.1, delay: 0.2, options: .CurveEaseOut, animations: {
+            self.topBox1HeadlineDes.alpha = 1
+            self.topBox1HeadlineDes.transform = CGAffineTransformMakeTranslation(0, 0)
+            }, completion: nil)
+    }
+    
+    //MARK: Constraint for topBox3
+    
+    
+
+
+    @IBOutlet var topBox3ImageCenterXBigConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3ImageCenterYBigConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3ImageHeightConstraint: NSLayoutConstraint!
+
+    @IBOutlet var topBox3ImageCenterXConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3ImageWidthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3ImageTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3UnderlayImage: UIImageView!
+    @IBAction func topBox3ButtonDidTouch(sender: AnyObject) {
+        
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
+            
+            
+            
+            self.topBox3LeadingConstraint.constant = 0
+            self.topBox3TrailingConstraint.constant = 0
+            self.topBox3TopConstraint.constant = 0
+            self.topBox3BottomConstraint.constant = 0
+            
+            self.topBox3View.layoutIfNeeded()
+            self.topBox3Headline.alpha = 0
+            self.topBox3HeadlineDes.alpha = 0
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.4, delay: 0, options: .CurveEaseOut, animations: {
+            
+            self.topBox3ImageCenterXBigConstraint.priority = 900
+            self.topBox3ImageCenterYBigConstraint.priority = 900
+            self.topBox3ImageWidthConstraint.priority = 900
+            
+            
+            
+            self.topBox3ImageCenterXConstraint.priority = 999
+            self.topBox3ImageHeightConstraint.priority = 999
+            self.topBox3ImageTopConstraint.priority = 999
+            
+            self.topBox3View.layoutIfNeeded()
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.6, delay: 0.2, options: .CurveEaseOut, animations: {
+            self.topBox3UnderlayImage.alpha = 1
+            }, completion: nil)
+        
+
+
+        
+    }
+    
+    @IBOutlet var mainScrollView: UIScrollView!
+    
+    @IBAction func buttonToBatteryDidTouch(sender: AnyObject) {
+
+        self.mainScrollView.setContentOffset(CGPoint(x: 0, y: UIScreen.mainScreen().bounds.height), animated: true)
+//        self.mainScrollView.contentOffset = CGPoint(x: 0, y: UIScreen.mainScreen().bounds.height)
+
+        //        scrollv
+    }
+    
+    @IBAction func buttonToTopMenuDidTouch(sender: AnyObject) {
+        
+        self.mainScrollView.setContentOffset(CGPoint(x: 0, y:0), animated: true)
+        
+    }
+    
+    
+    
+    
+    
+    
+//MARK: Function area
  
     func createLayerShadow(rect: CGRect) -> CALayer{
         let layerOutput = CALayer()
@@ -428,6 +668,8 @@ class batteryDashboardVC: UIViewController {
         else if value <= 0.5 {
             let valueLess = abs(value - 0.5) * 2
             
+            topContentView.alpha = valueLess * 2 - 1
+            
             riideLogoImage.alpha = (0.5 - valueLess) * 2
             batteryStatusSmallTopTextLabel.alpha = valueLess * 3 - 2
             batteryStatusTextLabel.alpha = (1 -  valueLess) * 2 - 1
@@ -475,6 +717,16 @@ class batteryDashboardVC: UIViewController {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         closure()
+        CATransaction.commit()
+    }
+    
+    func customCAAnimations(duration: CFTimeInterval = 0.2,
+                              timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: "kCAMediaTimingFunctionDefault"),
+                              animation: () -> ()) {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(duration)
+        CATransaction.setAnimationTimingFunction(timingFunction)
+        animation()
         CATransaction.commit()
     }
     

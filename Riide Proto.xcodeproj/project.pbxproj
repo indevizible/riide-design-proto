@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154637111CDE978D00D705A6 /* topViewIntroFlowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154637101CDE978D00D705A6 /* topViewIntroFlowVC.swift */; };
 		15C6CA3B1CD682B8004D67EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */; };
 		15C6CA3D1CD682B8004D67EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA3C1CD682B8004D67EC /* ViewController.swift */; };
 		15C6CA401CD682B8004D67EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA3E1CD682B8004D67EC /* Main.storyboard */; };
@@ -40,9 +41,6 @@
 		15C6CA921CD698B0004D67EC /* fontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA911CD698B0004D67EC /* fontWeight.swift */; };
 		15C6CA931CD698B0004D67EC /* fontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA911CD698B0004D67EC /* fontWeight.swift */; };
 		15C6CA941CD698B0004D67EC /* fontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA911CD698B0004D67EC /* fontWeight.swift */; };
-		15C6CA971CD69E5A004D67EC /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA961CD69E5A004D67EC /* landingVC.swift */; };
-		15C6CA981CD69E5A004D67EC /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA961CD69E5A004D67EC /* landingVC.swift */; };
-		15C6CA991CD69E5A004D67EC /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C6CA961CD69E5A004D67EC /* landingVC.swift */; };
 		15C6CA9B1CD69F8F004D67EC /* riide_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */; };
 		15C6CA9C1CD69F8F004D67EC /* riide_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */; };
 		15C6CA9D1CD69F8F004D67EC /* riide_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */; };
@@ -79,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		154637101CDE978D00D705A6 /* topViewIntroFlowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topViewIntroFlowVC.swift; sourceTree = "<group>"; };
 		15C6CA371CD682B8004D67EC /* Riide Proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Riide Proto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C6CA3A1CD682B8004D67EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15C6CA3C1CD682B8004D67EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +101,6 @@
 		15C6CA7C1CD687EB004D67EC /* maisonneuebookitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = maisonneuebookitalic.ttf; sourceTree = "<group>"; };
 		15C6CA891CD692D2004D67EC /* riideContentStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideContentStyle.swift; sourceTree = "<group>"; };
 		15C6CA911CD698B0004D67EC /* fontWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fontWeight.swift; sourceTree = "<group>"; };
-		15C6CA961CD69E5A004D67EC /* landingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = landingVC.swift; sourceTree = "<group>"; };
 		15C6CA9A1CD69F8F004D67EC /* riide_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = riide_background.mp4; sourceTree = "<group>"; };
 		15C6CA9F1CD6A76B004D67EC /* riideButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideButton.swift; sourceTree = "<group>"; };
 		15C6CAA01CD6A76B004D67EC /* riideButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riideButtonType.swift; sourceTree = "<group>"; };
@@ -233,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				15C6CA3E1CD682B8004D67EC /* Main.storyboard */,
-				15C6CA961CD69E5A004D67EC /* landingVC.swift */,
+				154637101CDE978D00D705A6 /* topViewIntroFlowVC.swift */,
 				15C6CAB01CD6DBFB004D67EC /* batteryDashboardVC.swift */,
 			);
 			name = Storyboards;
@@ -407,13 +405,13 @@
 				15C6CAA11CD6A76B004D67EC /* riideButton.swift in Sources */,
 				15C6CA8A1CD692D2004D67EC /* riideContentStyle.swift in Sources */,
 				15C6CAB11CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
-				15C6CA971CD69E5A004D67EC /* landingVC.swift in Sources */,
 				15C6CA921CD698B0004D67EC /* fontWeight.swift in Sources */,
 				15C6CA6A1CD683C5004D67EC /* riideFontTheme.swift in Sources */,
 				15C6CAA41CD6A76B004D67EC /* riideButtonType.swift in Sources */,
 				15C6CA701CD685FC004D67EC /* UIColorExtension.swift in Sources */,
 				15C6CA3B1CD682B8004D67EC /* AppDelegate.swift in Sources */,
 				15C6CA741CD68733004D67EC /* fonts.swift in Sources */,
+				154637111CDE978D00D705A6 /* topViewIntroFlowVC.swift in Sources */,
 				15C6CA6D1CD6848F004D67EC /* riideColorTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +423,6 @@
 				15C6CA931CD698B0004D67EC /* fontWeight.swift in Sources */,
 				15C6CAB21CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
 				15C6CA501CD682B8004D67EC /* Riide_ProtoTests.swift in Sources */,
-				15C6CA981CD69E5A004D67EC /* landingVC.swift in Sources */,
 				15C6CAAA1CD6A9EB004D67EC /* riideColorTheme.swift in Sources */,
 				15C6CA751CD68733004D67EC /* fonts.swift in Sources */,
 				15C6CA711CD6864E004D67EC /* UIColorExtension.swift in Sources */,
@@ -443,7 +440,6 @@
 				15C6CA941CD698B0004D67EC /* fontWeight.swift in Sources */,
 				15C6CAB31CD6DBFB004D67EC /* batteryDashboardVC.swift in Sources */,
 				15C6CA5B1CD682B8004D67EC /* Riide_ProtoUITests.swift in Sources */,
-				15C6CA991CD69E5A004D67EC /* landingVC.swift in Sources */,
 				15C6CAAB1CD6A9EC004D67EC /* riideColorTheme.swift in Sources */,
 				15C6CA761CD68733004D67EC /* fonts.swift in Sources */,
 				15C6CA721CD6864F004D67EC /* UIColorExtension.swift in Sources */,

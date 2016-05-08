@@ -110,13 +110,13 @@ internal enum riideButtonType {
     private func normalAttributedTitle(titleText: String) -> NSAttributedString {
         switch self {
         case .DarkButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Regular, kern: 2.0, color: riideColorTheme.init().riideWhite, alignment: .Center, uppercase: true, enableLineSpacing: false)
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideWhite, alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .OutlineDarkButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Regular, kern: 2.0, color: riideColorTheme.init().riideBlack, alignment: .Center, uppercase: true, enableLineSpacing: false)
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideBlack, alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .LightButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Regular, kern: 2.0, color: riideColorTheme.init().riideBlack, alignment: .Center, uppercase: true, enableLineSpacing: false)
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideBlack, alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .OutlineLightButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Regular, kern: 2.0, color: riideColorTheme.init().riideWhite, alignment: .Center, uppercase: true, enableLineSpacing: false)
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideWhite, alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .DarkTextButton:
             return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.init().riideBlack,uppercase: false, alignment: .Center, enableLineSpacing: false)
         case .LightTextButton:
@@ -143,7 +143,7 @@ internal enum riideButtonType {
         switch self {
         case .DarkButton:
             return riideFontTheme.headlineSmallText(titleText,
-                                                    weight: .Regular,
+                                                    weight: .Bold,
                                                     kern: 2.0,
                                                     color: riideColorTheme.init().riideWhite.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha),
                                                     alignment: .Center,
@@ -151,7 +151,7 @@ internal enum riideButtonType {
                                                     enableLineSpacing: false)
         case .OutlineDarkButton:
             return riideFontTheme.headlineSmallText(titleText,
-                                                    weight: .Regular,
+                                                    weight: .Bold,
                                                     kern: 2.0,
                                                     color: riideColorTheme.init().riideBlack.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha),
                                                     alignment: .Center,
@@ -159,14 +159,14 @@ internal enum riideButtonType {
                                                     enableLineSpacing: false)
         case .LightButton:
             return riideFontTheme.headlineSmallText(titleText,
-                                                    weight: .Regular,
+                                                    weight: .Bold,
                                                     kern: 2.0,
                                                     color: riideColorTheme.init().riideBlack.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha),
                                                     alignment: .Center,
                                                     uppercase: true,
                                                     enableLineSpacing: false)
         case .OutlineLightButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Regular, kern: 2.0, color: riideColorTheme.init().riideWhite.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha), alignment: .Center, uppercase: true, enableLineSpacing: false)
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideWhite.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha), alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .DarkTextButton:
             return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.init().riideBlack.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha), alignment: .Center, uppercase: false, enableLineSpacing: false)
         case .LightTextButton:
