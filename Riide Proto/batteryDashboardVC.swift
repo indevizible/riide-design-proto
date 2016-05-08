@@ -129,7 +129,7 @@ class batteryDashboardVC: UIViewController {
         
 
 
-
+        
         
         
         grayCircleLayer=createShapeLayer(riideColorTheme.init().riideLightGray, circularPlacement: true)
@@ -181,18 +181,40 @@ class batteryDashboardVC: UIViewController {
         
         topBox4HeadlineDes.attributedText = riideFontTheme.BodyText(topBox4HeadlineDesText, color: riideColorTheme.init().riideBlack)
         
+        addParallax(topBox3UnderlayImage, multiplier: -8)
+        addParallax(topBox3ImageView, multiplier: 8)
+        
         
     }
     var topBox1RectSize = CGRect()
     var playerLayer = AVPlayerLayer()
     let overlayLayer = CALayer()
+    
+    var topBox3Shadow = CALayer()
+    var topBox3Ratio = (x: CGFloat(), y: CGFloat())
+    
+    var topBox4Shadow = CALayer()
+    var topBox4Ratio = (x: CGFloat(), y: CGFloat())
+    
     override func viewDidAppear(animated: Bool) {
-        
+        moveThingsUpDown(0)
         topBox1RectSize = topBox1View.bounds
         topBox1View.layer.insertSublayer(createLayerShadow(topBox1View.bounds), atIndex: 0)
         topBox2View.layer.insertSublayer(createLayerShadow(topBox2View.bounds), atIndex: 0)
-        topBox3View.layer.insertSublayer(createLayerShadow(topBox3View.bounds), atIndex: 0)
-        topBox4View.layer.insertSublayer(createLayerShadow(topBox4View.bounds), atIndex: 0)
+        
+        topBox3Shadow = createLayerShadow(topBox3View.bounds)
+        
+        topBox3Ratio = (x: topBox3View.bounds.width/UIScreen.mainScreen().bounds.width, y: topBox3View.bounds.height/UIScreen.mainScreen().bounds.height)
+        
+        print (topBox3Ratio)
+        
+        topBox3View.layer.insertSublayer(topBox3Shadow, atIndex: 0)
+        
+        topBox4Shadow = createLayerShadow(topBox4View.bounds)
+        
+        topBox4Ratio = (x: topBox4View.bounds.width/UIScreen.mainScreen().bounds.width, y: topBox4View.bounds.height/UIScreen.mainScreen().bounds.height)
+
+        topBox4View.layer.insertSublayer(topBox4Shadow, atIndex: 0)
         
         let videoURL: NSURL = NSBundle.mainBundle().URLForResource("riide_background", withExtension: "mp4")!
         
@@ -310,13 +332,40 @@ class batteryDashboardVC: UIViewController {
     
     @IBOutlet var topBox3ImageTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet var topBox3HeadlineLeftConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3HeadlineDesLeftConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var topBox3HeadlineDesBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet var topBox3UnderlayImage: UIImageView!
     @IBAction func topBox3ButtonDidTouch(sender: AnyObject) {
         
+        self.performSegueWithIdentifier("segueToTopBox3Modal", sender: sender)
+        
+        
+        
+        
+        
+        UIView.animateWithDuration(0.15, delay: 0, options: .CurveEaseOut, animations: {
+            self.topBox3Headline.alpha = 0
+            }, completion: nil)
+        customCAAnimations(0.2,
+                           timingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                           animation: {
+                            
+                            self.topBox3Shadow.transform = CATransform3DMakeScale(1/self.topBox3Ratio.x, 1/self.topBox3Ratio.y , 1)
+            })
         
         UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
             
+            self.topBox3Shadow.opacity = 0
             
+            
+            self.topBox3Headline.transform = CGAffineTransformMakeTranslation(0, -12)
+            self.topBox3HeadlineDesBottomConstraint.constant = 72 + 24 * 4
+            self.topBox3HeadlineLeftConstraint.constant = 24 + 10
+            self.topBox3HeadlineDesLeftConstraint.constant = 24 + 10
             
             self.topBox3LeadingConstraint.constant = 0
             self.topBox3TrailingConstraint.constant = 0
@@ -324,7 +373,7 @@ class batteryDashboardVC: UIViewController {
             self.topBox3BottomConstraint.constant = 0
             
             self.topBox3View.layoutIfNeeded()
-            self.topBox3Headline.alpha = 0
+            
             self.topBox3HeadlineDes.alpha = 0
             }, completion: nil)
         
@@ -352,6 +401,70 @@ class batteryDashboardVC: UIViewController {
         
     }
     
+    
+    func topBox3TransitionBack(sender: AnyObject) {
+        
+        topBox3Headline.alpha = 0
+        topBox3HeadlineDes.alpha = 0
+
+        UIView.animateWithDuration(0.1, animations: {
+        self.topBox3UnderlayImage.alpha = 0
+        })
+        customCAAnimations(0.2,
+                           timingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                           animation: {
+        self.topBox3Shadow.transform = CATransform3DMakeScale(1, 1, 1)
+            })
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
+            self.topBox3Shadow.opacity = 1
+            
+            
+            self.topBox3HeadlineDesBottomConstraint.constant = 24
+            self.topBox3HeadlineLeftConstraint.constant = 24
+            self.topBox3HeadlineDesLeftConstraint.constant = 24
+            
+            self.topBox3LeadingConstraint.constant = 10
+            self.topBox3TrailingConstraint.constant = 10
+            self.topBox3TopConstraint.constant = 20
+            self.topBox3BottomConstraint.constant = 72
+            
+            self.topBox3View.layoutIfNeeded()
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseOut, animations: {
+            
+            self.topBox3ImageCenterXBigConstraint.priority = 999
+            self.topBox3ImageCenterYBigConstraint.priority = 999
+            self.topBox3ImageWidthConstraint.priority = 999
+            
+            
+            
+            self.topBox3ImageCenterXConstraint.priority = 900
+            self.topBox3ImageHeightConstraint.priority = 900
+            self.topBox3ImageTopConstraint.priority = 900
+            
+            self.topBox3View.layoutIfNeeded()
+            }, completion: nil)
+        
+        
+        self.topBox3Headline.transform = CGAffineTransformMakeTranslation(0, -24)
+        self.topBox3HeadlineDes.transform = CGAffineTransformMakeTranslation(0, -24)
+        UIView.animateWithDuration(0.15, delay: 0.2, options: .CurveEaseOut, animations: {
+            self.topBox3Headline.alpha = 1
+            self.topBox3Headline.transform = CGAffineTransformMakeTranslation(0, 0)
+            
+            }, completion: nil)
+        UIView.animateWithDuration(0.1, delay: 0.2, options: .CurveEaseOut, animations: {
+            self.topBox3HeadlineDes.alpha = 1
+            self.topBox3HeadlineDes.transform = CGAffineTransformMakeTranslation(0, 0)
+            }, completion: nil)
+    }
+
+    
+    
+    
+    
     @IBOutlet var mainScrollView: UIScrollView!
     
     @IBAction func buttonToBatteryDidTouch(sender: AnyObject) {
@@ -374,6 +487,22 @@ class batteryDashboardVC: UIViewController {
     
     
 //MARK: Function area
+    
+    func addParallax(vw: AnyObject, multiplier: Float = 1.0) {
+        let amount = multiplier
+        
+        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
+        horizontal.minimumRelativeValue = -amount
+        horizontal.maximumRelativeValue = amount
+        
+        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
+        vertical.minimumRelativeValue = -amount
+        vertical.maximumRelativeValue = amount
+        
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [horizontal, vertical]
+        vw.addMotionEffect(group)
+    }
  
     func createLayerShadow(rect: CGRect) -> CALayer{
         let layerOutput = CALayer()
@@ -464,15 +593,23 @@ class batteryDashboardVC: UIViewController {
         
     }
     
-    
+
+    @IBOutlet var topBoxScrollView: UIScrollView!
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let scrollOffset = scrollView.contentOffset.y
-        let maxScroll = view.frame.height*2
-        let scrollPercentage = scrollOffset/maxScroll
         
-        
-        moveThingsUpDown(CGFloat(scrollPercentage))
+        if mainScrollView == scrollView {
+            
+            let scrollOffset = scrollView.contentOffset.y
+            let maxScroll = view.frame.height*2
+            let scrollPercentage = scrollOffset/maxScroll
+            
+            
+            moveThingsUpDown(CGFloat(scrollPercentage))
+        }
+        else if topBoxScrollView == scrollView {
+            print(scrollView.contentOffset.x)
+        }
 //        transitionLinearToCircular(CGFloat(scrollPercentage))
     }
     
@@ -668,7 +805,7 @@ class batteryDashboardVC: UIViewController {
         else if value <= 0.5 {
             let valueLess = abs(value - 0.5) * 2
             
-            topContentView.alpha = valueLess * 2 - 1
+            topContentView.alpha = valueLess * 1.5 - 0.5
             
             riideLogoImage.alpha = (0.5 - valueLess) * 2
             batteryStatusSmallTopTextLabel.alpha = valueLess * 3 - 2
@@ -688,6 +825,32 @@ class batteryDashboardVC: UIViewController {
             batteryDrawingView.layoutIfNeeded()
             scrollContentView.layoutIfNeeded()
             transitionLinearToCircular(valueLess)
+//            print(valueLess)
+            var transformValue:CATransform3D = CATransform3DIdentity
+            transformValue.m34 = -1.0 / 2048
+            
+//            transformValue = CATransform3DTranslate(transformValue, 0,  (UIScreen.mainScreen().bounds.height * ( sin(valueLess * CGFloat(M_PI)))/2), -(1-valueLess) * 600)
+//            print((sin(valueLess * CGFloat(M_PI))))
+            transformValue = CATransform3DTranslate(transformValue, 0,  (UIScreen.mainScreen().bounds.height * (1-valueLess))/1.5, -(1-valueLess) * 600)
+//            transformValue = CATransform3DScale(transformValue,  0.6 + valueLess / 2.5,  (1 - 1/1.8) + valueLess / 1.8, 1)
+            
+            
+        
+            transformValue = CATransform3DRotate(transformValue, CGFloat(M_PI/1.25) - valueLess * CGFloat(M_PI/1.25), 1, 0, 0)
+            
+            
+            
+            
+//            let perspectiveValue:CGFloat = -1.0 / 2048
+//            topBox1View.layer.transform.m34 = perspectiveValue
+//            topBox2View.layer.transform.m34 = perspectiveValue
+//            topBox3View.layer.transform.m34 = perspectiveValue
+//            topBox4View.layer.transform.m34 = perspectiveValue
+//            topBox1View.layer.transform = transformValue
+//            topBox2View.layer.transform = transformValue
+//            topBox3View.layer.transform = transformValue
+//            topBox4View.layer.transform = transformValue
+
         }
     }
     

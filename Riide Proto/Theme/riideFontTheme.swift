@@ -133,7 +133,7 @@ internal struct riideFontTheme {
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeExtralarge),
             NSForegroundColorAttributeName: colorTheme.riideBlack,
-            NSKernAttributeName: 0.75,
+            NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
@@ -150,7 +150,7 @@ internal struct riideFontTheme {
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeExtralarge),
             NSForegroundColorAttributeName: colorTheme.riideBlack,
-            NSKernAttributeName: 0.75,
+            NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
@@ -167,7 +167,7 @@ internal struct riideFontTheme {
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeLarge),
             NSForegroundColorAttributeName: colorTheme.riideBlack,
-            NSKernAttributeName: 0.75,
+            NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
@@ -184,7 +184,7 @@ internal struct riideFontTheme {
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeLarge),
             NSForegroundColorAttributeName: colorTheme.riideBlack,
-            NSKernAttributeName: 0.75,
+            NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
@@ -201,7 +201,7 @@ internal struct riideFontTheme {
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeSmall),
             NSForegroundColorAttributeName: colorTheme.riideBlack,
-            NSKernAttributeName: 0.75,
+            NSKernAttributeName: 0.5,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
@@ -218,7 +218,7 @@ internal struct riideFontTheme {
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeSmall),
             NSForegroundColorAttributeName: colorTheme.riideBlack,
-            NSKernAttributeName: 0.75,
+            NSKernAttributeName: 0.5,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
         
@@ -287,6 +287,51 @@ internal struct riideFontTheme {
         paragraphStyle.paragraphSpacing = 8
         paragraphStyle.alignment = NSTextAlignment.Left
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        return [
+            NSFontAttributeName: Fonts.maisonBold(fontSizeMedium),
+            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSKernAttributeName: 0.0,
+            NSParagraphStyleAttributeName: paragraphStyle
+        ]
+        
+    }
+    
+    /**
+     text style.
+     */
+    var bodyList: FontAttributes {
+        let tabSize: CGFloat = 16
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        paragraphStyle.paragraphSpacing = 0
+        paragraphStyle.alignment = NSTextAlignment.Left
+        paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        paragraphStyle.headIndent = tabSize
+        paragraphStyle.firstLineHeadIndent = tabSize/2
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .Left, location: tabSize, options: [:]),]
+        
+        return [
+            NSFontAttributeName: Fonts.maisonBook(fontSizeMedium),
+            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSKernAttributeName: 0.0,
+            NSParagraphStyleAttributeName: paragraphStyle
+        ]
+        
+    }
+    
+    /**
+     text style.
+     */
+    var bodyListBold: FontAttributes {
+        let tabSize: CGFloat = 16
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        paragraphStyle.paragraphSpacing = 0
+        paragraphStyle.alignment = NSTextAlignment.Left
+        paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        paragraphStyle.headIndent = tabSize
+        paragraphStyle.firstLineHeadIndent = tabSize/2
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .Left, location: tabSize, options: [:]),]
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeMedium),
             NSForegroundColorAttributeName: colorTheme.riideDarkGray,
@@ -595,6 +640,44 @@ internal struct riideFontTheme {
         return NSAttributedString(string: processedText, attributes: textstyleAttributes)
     }
 
+    static func BodyListText(text: String,
+                         weight: FontWeight = .Regular,
+                         kern: CGFloat? = nil,
+                         color: UIColor? = nil,
+                         alignment: NSTextAlignment = .Left,
+                         uppercase: Bool = false,
+                         enableLineSpacing: Bool = true) -> NSAttributedString {
+        var textstyleAttributes: FontAttributes
+        
+        switch weight {
+        case .Regular:
+            textstyleAttributes  = riideFontTheme.init().bodyList
+        case .Bold:
+            textstyleAttributes = riideFontTheme.init().bodyListBold
+        }
+        
+        textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
+        
+        switch riideCurrentStyle {
+        case .darkContent:
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+        case .lightContent:
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+        }
+        
+        
+        if let paragraph = textstyleAttributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
+            paragraph.lineSpacing = enableLineSpacing ? paragraph.lineSpacing : 0
+            paragraph.alignment = alignment
+            textstyleAttributes[NSParagraphStyleAttributeName] = paragraph
+        }
+        
+        let processedText: String = uppercase ? "•\t" + text.uppercaseString.stringByReplacingOccurrencesOfString("\n", withString: "\n•\t") : "•\t" + text.stringByReplacingOccurrencesOfString("\n", withString: "\n•\t")
+        
+        return NSAttributedString(string: processedText, attributes: textstyleAttributes)
+    }
+    
+    
     static func BodySmallText(text: String,
                          weight: FontWeight = .Regular,
                          kern: CGFloat? = nil,
