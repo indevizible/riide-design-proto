@@ -47,7 +47,7 @@ class controlPanelVC: UIViewController {
         
         saveButton.type = .DarkButton
         
-        var segmentFont = riideFontTheme.init().headlineSmall
+        var segmentFont = riideFontTheme().headlineSmall
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 0
         segmentFont[NSParagraphStyleAttributeName] = paragraphStyle

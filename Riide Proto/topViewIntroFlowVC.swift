@@ -52,7 +52,7 @@ class topViewIntroFlowVC: UIViewController {
         xBtnButton.alpha = 0
         navbarView.alpha = 0
         
-        navbarView.backgroundColor = riideColorTheme.init().riideBlack
+        navbarView.backgroundColor = riideColorTheme.Black
         
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
@@ -73,9 +73,9 @@ class topViewIntroFlowVC: UIViewController {
         view.layoutIfNeeded()
     
         
-        topBoxHeadline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox1HeadlineText, color: riideColorTheme.init().riideWhite)
+        topBoxHeadline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox1HeadlineText, color: riideColorTheme.White)
         
-        topBoxHeadlineDes.attributedText = riideFontTheme.BodyText(topBox1HeadlineDesText, color: riideColorTheme.init().riideWhite)
+        topBoxHeadlineDes.attributedText = riideFontTheme.BodyText(topBox1HeadlineDesText, color: riideColorTheme.White)
     }
 
     override func viewDidAppear(animated: Bool) {

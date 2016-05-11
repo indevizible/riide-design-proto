@@ -55,7 +55,6 @@ public extension UIColor {
             // The swift 1.1 compiler is currently unable to destroy partially initialized classes in all cases,
             // so it disallows formation of a situation where it would have to.  We consider this a bug to be fixed
             // in future releases, not a feature. -- Apple Forum
-            self.init()
             return nil
         }
     }

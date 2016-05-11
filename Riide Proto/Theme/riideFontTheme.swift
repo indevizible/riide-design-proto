@@ -15,9 +15,6 @@ public typealias FontAttributes = [String: NSObject]
 internal struct riideFontTheme {
     
     
-
-    let colorTheme = riideColorTheme()
-    
     /**
      Define *Font Size Jumbo* = **42.0**
      
@@ -64,7 +61,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeJumbo),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: -1.4,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -81,7 +78,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeJumbo),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: -1.4,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -98,7 +95,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeExtraExtralarge),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -115,7 +112,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeExtraExtralarge),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -132,7 +129,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeExtralarge),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -149,7 +146,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeExtralarge),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -166,7 +163,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeLarge),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -183,7 +180,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeLarge),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0.25,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -200,7 +197,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeSmall),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0.5,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -217,7 +214,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeSmall),
-            NSForegroundColorAttributeName: colorTheme.riideBlack,
+            NSForegroundColorAttributeName: riideColorTheme.Black,
             NSKernAttributeName: 0.5,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -235,7 +232,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeLarge),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -253,7 +250,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeLarge),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -271,7 +268,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeMedium),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -289,7 +286,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeMedium),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -312,7 +309,7 @@ internal struct riideFontTheme {
         
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeMedium),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -334,7 +331,7 @@ internal struct riideFontTheme {
         paragraphStyle.tabStops = [NSTextTab(textAlignment: .Left, location: tabSize, options: [:]),]
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeMedium),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -352,7 +349,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBook(fontSizeSmall),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -370,7 +367,7 @@ internal struct riideFontTheme {
         paragraphStyle.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         return [
             NSFontAttributeName: Fonts.maisonBold(fontSizeSmall),
-            NSForegroundColorAttributeName: colorTheme.riideDarkGray,
+            NSForegroundColorAttributeName: riideColorTheme.DarkGray,
             NSKernAttributeName: 0.0,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
@@ -389,18 +386,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().headlineJumbo
+            textstyleAttributes  = riideFontTheme().headlineJumbo
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().headlineJumboBold
+            textstyleAttributes = riideFontTheme().headlineJumboBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideBlack
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.Black
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideWhite
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.White
         }
         
         
@@ -427,18 +424,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().headlineExtraExtraLarge
+            textstyleAttributes  = riideFontTheme().headlineExtraExtraLarge
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().headlineExtraExtraLargeBold
+            textstyleAttributes = riideFontTheme().headlineExtraExtraLargeBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideBlack
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.Black
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideWhite
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.White
         }
         
         
@@ -466,18 +463,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().headlineExtraLarge
+            textstyleAttributes  = riideFontTheme().headlineExtraLarge
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().headlineExtraLargeBold
+            textstyleAttributes = riideFontTheme().headlineExtraLargeBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideBlack
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.Black
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideWhite
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.White
         }
         
         
@@ -503,18 +500,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().headlineLarge
+            textstyleAttributes  = riideFontTheme().headlineLarge
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().headlineLargeBold
+            textstyleAttributes = riideFontTheme().headlineLargeBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideBlack
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.Black
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideWhite
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.White
         }
         
         
@@ -540,18 +537,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().headlineSmall
+            textstyleAttributes  = riideFontTheme().headlineSmall
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().headlineSmallBold
+            textstyleAttributes = riideFontTheme().headlineSmallBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideBlack
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.Black
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideWhite
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.White
         }
         
         
@@ -577,18 +574,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().bodyLarge
+            textstyleAttributes  = riideFontTheme().bodyLarge
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().bodyLargeBold
+            textstyleAttributes = riideFontTheme().bodyLargeBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         }
         
         
@@ -614,18 +611,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().body
+            textstyleAttributes  = riideFontTheme().body
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().bodyBold
+            textstyleAttributes = riideFontTheme().bodyBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         }
         
         
@@ -651,18 +648,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().bodyList
+            textstyleAttributes  = riideFontTheme().bodyList
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().bodyListBold
+            textstyleAttributes = riideFontTheme().bodyListBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         }
         
         
@@ -689,18 +686,18 @@ internal struct riideFontTheme {
         
         switch weight {
         case .Regular:
-            textstyleAttributes  = riideFontTheme.init().bodySmall
+            textstyleAttributes  = riideFontTheme().bodySmall
         case .Bold:
-            textstyleAttributes = riideFontTheme.init().bodySmallBold
+            textstyleAttributes = riideFontTheme().bodySmallBold
         }
         
         textstyleAttributes[NSKernAttributeName] = kern ?? textstyleAttributes[NSKernAttributeName]
         
         switch riideCurrentStyle {
         case .darkContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         case .lightContent:
-            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.init().riideDarkGray
+            textstyleAttributes[NSForegroundColorAttributeName] = color ?? riideColorTheme.DarkGray
         }
         
         

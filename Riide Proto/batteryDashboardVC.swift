@@ -136,12 +136,12 @@ class batteryDashboardVC: UIViewController {
         
         gestureToControlPanel(view, view: view)
 
-        topBoxPageIndicatorBackgroundLabel.textColor = riideColorTheme.init().riideDarkGray
-        topBoxPageIndicatorLabel.currentColor = riideColorTheme.init().riideBlack
+        topBoxPageIndicatorBackgroundLabel.textColor = riideColorTheme.DarkGray
+        topBoxPageIndicatorLabel.currentColor = riideColorTheme.Black
         topBoxPageIndicatorLabel.defaultColor = UIColor.clearColor()
         
-        grayCircleLayer=createShapeLayer(riideColorTheme.init().riideLightGray, circularPlacement: true)
-        greenCircleLayer=createShapeLayer(riideColorTheme.init().riideGreen, circularPlacement: false)
+        grayCircleLayer=createShapeLayer(riideColorTheme.LightGray, circularPlacement: true)
+        greenCircleLayer=createShapeLayer(riideColorTheme.Green, circularPlacement: false)
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: 200, y: 200), radius: radCircleLargeSize, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
         drawingLayer = CAShapeLayer()
@@ -171,23 +171,23 @@ class batteryDashboardVC: UIViewController {
         batteryStatusTextLabel.attributedText = riideFontTheme.BodyText("Battery is fucking awesome!", color: riideColorTheme.riideInkPrimaryColor(), alignment: .Center, enableLineSpacing: false)
         
         batteryStatusSmallTopTextLabel.attributedText = riideFontTheme.BodyText(NSString(format: "Riide Battery: %.01f%", batteryLevel) as String, color: riideColorTheme.riideInkPrimaryColor(), alignment: .Center, enableLineSpacing: false)
-        view.backgroundColor = riideColorTheme.init().riideWhisperGray
+        view.backgroundColor = riideColorTheme.WhisperGray
         
-        topBox1Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox1HeadlineText, color: riideColorTheme.init().riideWhite)
+        topBox1Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox1HeadlineText, color: riideColorTheme.White)
         
-        topBox1HeadlineDes.attributedText = riideFontTheme.BodyText(topBox1HeadlineDesText, color: riideColorTheme.init().riideWhite)
+        topBox1HeadlineDes.attributedText = riideFontTheme.BodyText(topBox1HeadlineDesText, color: riideColorTheme.White)
         
-        topBox2Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox2HeadlineText, color: riideColorTheme.init().riideWhite)
+        topBox2Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox2HeadlineText, color: riideColorTheme.White)
         
-        topBox2HeadlineDes.attributedText = riideFontTheme.BodyText(topBox2HeadlineDesText, color: riideColorTheme.init().riideWhite)
+        topBox2HeadlineDes.attributedText = riideFontTheme.BodyText(topBox2HeadlineDesText, color: riideColorTheme.White)
         
         topBox3Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox3HeadlineText)
         
-        topBox3HeadlineDes.attributedText = riideFontTheme.BodyText(topBox3HeadlineDesText, color: riideColorTheme.init().riideBlack)
+        topBox3HeadlineDes.attributedText = riideFontTheme.BodyText(topBox3HeadlineDesText, color: riideColorTheme.Black)
         
         topBox4Headline.attributedText = riideFontTheme.headlineExtraExtraLargeText(topBox4HeadlineText)
         
-        topBox4HeadlineDes.attributedText = riideFontTheme.BodyText(topBox4HeadlineDesText, color: riideColorTheme.init().riideBlack)
+        topBox4HeadlineDes.attributedText = riideFontTheme.BodyText(topBox4HeadlineDesText, color: riideColorTheme.Black)
         
         addParallax(topBox3UnderlayImage, multiplier: -8)
         addParallax(topBox3ImageView, multiplier: 8)
@@ -249,7 +249,7 @@ class batteryDashboardVC: UIViewController {
         
         //loop video
         NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: "loopVideo",
+                                                         selector: #selector(batteryDashboardVC.loopVideo),
                                                          name: AVPlayerItemDidPlayToEndTimeNotification,
                                                          object: nil)
 
@@ -520,7 +520,7 @@ class batteryDashboardVC: UIViewController {
         //                shadowLayer1.frame = CGRect(x: 0, y: 0, width: topBox1View.frame.width, height: topBox1View.frame.height)
         shadowLayer1.shadowPath = shadowShape
         shadowLayer1.backgroundColor = UIColor.clearColor().CGColor
-        shadowLayer1.shadowColor = riideColorTheme.init().riideBlack.colorWithAlphaComponent(0.24).CGColor
+        shadowLayer1.shadowColor = riideColorTheme.Black.colorWithAlphaComponent(0.24).CGColor
         shadowLayer1.shadowOffset = CGSize(width: 0, height: 0)
         shadowLayer1.shadowRadius = 2
         shadowLayer1.shadowOpacity = 1
@@ -530,7 +530,7 @@ class batteryDashboardVC: UIViewController {
         //        shadowLayer2.frame = CGRect(x: 0, y: 0, width: topBox1View.frame.width, height: topBox1View.frame.height)
         shadowLayer2.shadowPath = shadowShape
         shadowLayer2.backgroundColor = UIColor.clearColor().CGColor
-        shadowLayer2.shadowColor = riideColorTheme.init().riideBlack.colorWithAlphaComponent(0.24).CGColor
+        shadowLayer2.shadowColor = riideColorTheme.Black.colorWithAlphaComponent(0.24).CGColor
         shadowLayer2.shadowOffset = CGSize(width: 0, height: 2)
         shadowLayer2.shadowRadius = 2
         shadowLayer2.shadowOpacity = 1
@@ -548,7 +548,7 @@ class batteryDashboardVC: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         riideLogoImage.alpha = 0
-        view.backgroundColor = riideColorTheme.init().riideWhite
+        view.backgroundColor = riideColorTheme.White
         batteryDrawingView.alpha = 0
         dynamicBadgeHeightConstraint.constant = 0
 //        self.riideLogoTopConstraint.constant = 24
@@ -561,7 +561,7 @@ class batteryDashboardVC: UIViewController {
 
         
         UIView.animateWithDuration(0.2, animations: {
-        self.view.backgroundColor = riideColorTheme.init().riideWhisperGray
+        self.view.backgroundColor = riideColorTheme.WhisperGray
                     })
         UIView.animateWithDuration(0.2,
                                    delay: 0.0,
@@ -641,10 +641,8 @@ class batteryDashboardVC: UIViewController {
     func calCircleTuple() -> [(x: CGFloat, y: CGFloat)] {
         var tupleArray = [(x: CGFloat, y: CGFloat)]()
         var currentDegree: CGFloat = 225
-        for i in 1...numberCircle {
+        for _ in 1...numberCircle {
             
-            
-        
             let x:CGFloat = cos(currentDegree * CGFloat(M_PI) / 180.0)
             let y:CGFloat = sin(currentDegree * CGFloat(M_PI) / 180.0)
             tupleArray.append((x: x, y: y))
@@ -714,7 +712,7 @@ class batteryDashboardVC: UIViewController {
     
     func batteryLevelSet(percentage: CGFloat){
         
-        var statusColor: UIColor = riideColorTheme.init().riideGreen
+        var statusColor: UIColor = riideColorTheme.Green
         batteryStatusSmallTopTextLabel.attributedText = riideFontTheme.BodyText(NSString(format: "Riide Battery: %.0f%%", percentage * 100) as String, color: riideColorTheme.riideInkSecondaryColor(), alignment: .Center, enableLineSpacing: false)
         percentageNumberLabel.attributedText = riideFontTheme.headlineJumboText(NSString(format: "%.0f", percentage * 100) as String, weight: .Regular, alignment: .Center, enableLineSpacing: false)
         percentageSymbolLabel.attributedText = riideFontTheme.headlineExtraLargeText("%", weight: .Bold, alignment: .Center, enableLineSpacing: false)
@@ -725,16 +723,16 @@ class batteryDashboardVC: UIViewController {
         }
         
         if percentage < 0.20 {
-            statusColor = riideColorTheme.init().riideOrange
+            statusColor = riideColorTheme.Orange
             
-            batteryStatusTextLabel.attributedText = riideFontTheme.BodyText("Battery is running low!", color: riideColorTheme.init().riideOrange , alignment: .Center, enableLineSpacing: false)
+            batteryStatusTextLabel.attributedText = riideFontTheme.BodyText("Battery is running low!", color: riideColorTheme.Orange , alignment: .Center, enableLineSpacing: false)
         }
         
         if percentage < 0.10 {
-            statusColor = riideColorTheme.init().riideRed
+            statusColor = riideColorTheme.Red
             
             batteryStatusTextLabel.attributedText = riideFontTheme.BodyText("Battery is running very low!",
-                                                                            color: riideColorTheme.init().riideRed , alignment: .Center, enableLineSpacing: false)
+                                                                            color: riideColorTheme.Red , alignment: .Center, enableLineSpacing: false)
         }
         
         if percentage < 0.20 {

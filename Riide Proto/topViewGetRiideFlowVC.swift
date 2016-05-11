@@ -64,13 +64,13 @@ class topViewGetRiideFlowVC: UIViewController {
         self.riidePassDescriptionLabel.transform = CGAffineTransformMakeTranslation(0, 48+16)
         self.riidePassDetailScrollView.transform = CGAffineTransformMakeTranslation(0, 48+16*2)
         self.subscribeButton.transform = CGAffineTransformMakeTranslation(0, 48+16*3)
-        riidePassDetailScrollView.backgroundColor = riideColorTheme.init().riideWhisperGray
+        riidePassDetailScrollView.backgroundColor = riideColorTheme.WhisperGray
         subscribeButton.type = .DarkButton
         riidePassDescriptionLabel.attributedText = riideFontTheme.BodyText(introBox3RiidePassDescription, alignment: .Center)
         
         subscribeButton.setTitle(subscribeButtonText, forState: .Normal)
         
-        detail01Label.attributedText = riideFontTheme.BodyText(detail01Text, color: riideColorTheme.init().riideBlue)
+        detail01Label.attributedText = riideFontTheme.BodyText(detail01Text, color: riideColorTheme.Blue)
         
         detail02Label.attributedText = riideFontTheme.BodyText(detail02Text)
         detail03Label.attributedText = riideFontTheme.headlineLargeText(detail03Text, enableLineSpacing: false)

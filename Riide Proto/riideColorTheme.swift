@@ -6,7 +6,6 @@
 //  Copyright © 2016 VIRAKRI JINANGKUL. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 internal struct riideColorTheme {
@@ -16,56 +15,56 @@ internal struct riideColorTheme {
      #000000
      
      */
-    let riideBlack:UIColor = UIColor(hexString: "#222222", alpha: 1.0)!
+    static let Black = UIColor(hexString: "#222222", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideDarkGray:UIColor = UIColor(hexString: "#7E8183", alpha: 1.0)!
+    static let DarkGray = UIColor(hexString: "#7E8183", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideGray:UIColor = UIColor(hexString: "#B7B7B7", alpha: 1.0)!
+    static let Gray = UIColor(hexString: "#B7B7B7", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideLightGray:UIColor = UIColor(hexString: "#F0F0F0", alpha: 1.0)!
+    static let LightGray = UIColor(hexString: "#F0F0F0", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideWhisperGray:UIColor = UIColor(hexString: "#F8F8FA", alpha: 1.0)!
+    static let WhisperGray = UIColor(hexString: "#F8F8FA", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideWhite:UIColor = UIColor(hexString: "#FFFFFF", alpha: 1.0)!
+    static let White = UIColor(hexString: "#FFFFFF", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideBlue:UIColor = UIColor(hexString: "#008CBA", alpha: 1.0)!
+    static let Blue = UIColor(hexString: "#008CBA", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideGreen:UIColor = UIColor(hexString: "#C5D922", alpha: 1.0)!
+    static let Green = UIColor(hexString: "#C5D922", alpha: 1.0)!
     
     
     /** primary color.
@@ -73,34 +72,32 @@ internal struct riideColorTheme {
      #000000
      
      */
-    let riideOrange:UIColor = UIColor(hexString: "#D9A52E", alpha: 1.0)!
+    static let Orange = UIColor(hexString: "#D9A52E", alpha: 1.0)!
     
     /** primary color.
      
      #000000
      
      */
-    let riideRed:UIColor = UIColor(hexString: "#B54A2F", alpha: 1.0)!
+    static let Red = UIColor(hexString: "#B54A2F", alpha: 1.0)!
     
-    let riideDisableAlpha:CGFloat = 0.15
+    static let DisableAlpha: CGFloat = 0.15
     
     static func riideInkPrimaryColor() -> UIColor {
         switch riideCurrentStyle {
         case .darkContent:
-            return riideColorTheme.init().riideBlack
+            return Black
         case .lightContent:
-            return riideColorTheme.init().riideWhite
+            return White
         }
     }
     
     static func riideInkSecondaryColor() -> UIColor {
         switch riideCurrentStyle {
         case .darkContent:
-            return riideColorTheme.init().riideDarkGray
+            return DarkGray
         case .lightContent:
-            return riideColorTheme.init().riideLightGray
+            return LightGray
         }
     }
-    
-    
 }

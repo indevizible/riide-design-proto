@@ -108,9 +108,9 @@ public class CharPageControl: UILabel {
     }
     
     
-    private func updatePage(var progress: CGFloat) {
+    private func updatePage(progress: CGFloat) {
         
-        progress = max(0.0,min(progress,numberOfPages-1))
+        let progress = max(0.0,min(progress,numberOfPages-1))
         
         if currentAttributedString == nil {
             preparePageControlString()

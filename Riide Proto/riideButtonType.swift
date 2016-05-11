@@ -53,9 +53,7 @@ internal enum riideButtonType {
      */
     func attributedTitle(titleText: String, controlState: UIControlState) -> NSAttributedString {
         switch controlState {
-        case UIControlState.Disabled:
-            return disabledAttributedTitle(titleText)
-        case UIControlState.Highlighted:
+        case UIControlState.Disabled, UIControlState.Highlighted:
             return disabledAttributedTitle(titleText)
         case UIControlState.Normal:
             return normalAttributedTitle(titleText)
@@ -109,34 +107,30 @@ internal enum riideButtonType {
 
     private func normalAttributedTitle(titleText: String) -> NSAttributedString {
         switch self {
-        case .DarkButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideWhite, alignment: .Center, uppercase: true, enableLineSpacing: false)
-        case .OutlineDarkButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideBlack, alignment: .Center, uppercase: true, enableLineSpacing: false)
-        case .LightButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideBlack, alignment: .Center, uppercase: true, enableLineSpacing: false)
-        case .OutlineLightButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideWhite, alignment: .Center, uppercase: true, enableLineSpacing: false)
+        case .DarkButton, OutlineLightButton:
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.White, alignment: .Center, uppercase: true, enableLineSpacing: false)
+        case .OutlineDarkButton, LightButton:
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.Black, alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .DarkTextButton:
-            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.init().riideBlack,uppercase: false, alignment: .Center, enableLineSpacing: false)
+            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.Black,uppercase: false, alignment: .Center, enableLineSpacing: false)
         case .LightTextButton:
-            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.init().riideWhite, uppercase: false, alignment: .Center, enableLineSpacing: false)
+            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.White, uppercase: false, alignment: .Center, enableLineSpacing: false)
         }
     }
 
     private func normalBackgroundColor() -> UIColor {
         switch self {
         case .DarkButton:
-            return riideColorTheme.init().riideBlack
+            return riideColorTheme.Black
         case .LightButton:
-            return riideColorTheme.init().riideWhite
+            return riideColorTheme.White
         default:
             return UIColor.clearColor()
         }
     }
 
     private func disabledBackgroundColor() -> UIColor {
-        return normalBackgroundColor().colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha)
+        return normalBackgroundColor().colorWithAlphaComponent(riideColorTheme.DisableAlpha)
     }
 
     private func disabledAttributedTitle(titleText: String) -> NSAttributedString {
@@ -145,7 +139,7 @@ internal enum riideButtonType {
             return riideFontTheme.headlineSmallText(titleText,
                                                     weight: .Bold,
                                                     kern: 2.0,
-                                                    color: riideColorTheme.init().riideWhite.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha),
+                                                    color: riideColorTheme.White.colorWithAlphaComponent(riideColorTheme.DisableAlpha),
                                                     alignment: .Center,
                                                     uppercase: true,
                                                     enableLineSpacing: false)
@@ -153,7 +147,7 @@ internal enum riideButtonType {
             return riideFontTheme.headlineSmallText(titleText,
                                                     weight: .Bold,
                                                     kern: 2.0,
-                                                    color: riideColorTheme.init().riideBlack.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha),
+                                                    color: riideColorTheme.Black.colorWithAlphaComponent(riideColorTheme.DisableAlpha),
                                                     alignment: .Center,
                                                     uppercase: true,
                                                     enableLineSpacing: false)
@@ -161,32 +155,32 @@ internal enum riideButtonType {
             return riideFontTheme.headlineSmallText(titleText,
                                                     weight: .Bold,
                                                     kern: 2.0,
-                                                    color: riideColorTheme.init().riideBlack.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha),
+                                                    color: riideColorTheme.Black.colorWithAlphaComponent(riideColorTheme.DisableAlpha),
                                                     alignment: .Center,
                                                     uppercase: true,
                                                     enableLineSpacing: false)
         case .OutlineLightButton:
-            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.init().riideWhite.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha), alignment: .Center, uppercase: true, enableLineSpacing: false)
+            return riideFontTheme.headlineSmallText(titleText, weight: .Bold, kern: 2.0, color: riideColorTheme.White.colorWithAlphaComponent(riideColorTheme.DisableAlpha), alignment: .Center, uppercase: true, enableLineSpacing: false)
         case .DarkTextButton:
-            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.init().riideBlack.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha), alignment: .Center, uppercase: false, enableLineSpacing: false)
+            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.Black.colorWithAlphaComponent(riideColorTheme.DisableAlpha), alignment: .Center, uppercase: false, enableLineSpacing: false)
         case .LightTextButton:
-            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.init().riideWhite.colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha), alignment: .Center, uppercase: false, enableLineSpacing: false)
+            return riideFontTheme.BodyText(titleText, weight: .Bold, kern: 1.0, color: riideColorTheme.White.colorWithAlphaComponent(riideColorTheme.DisableAlpha), alignment: .Center, uppercase: false, enableLineSpacing: false)
         }
     }
 
     private func normalBorderColor() -> CGColor {
         switch self {
         case .OutlineDarkButton:
-            return riideColorTheme.init().riideBlack.CGColor
+            return riideColorTheme.Black.CGColor
         case .OutlineLightButton:
-            return riideColorTheme.init().riideWhite.CGColor
+            return riideColorTheme.White.CGColor
         default:
             return UIColor.clearColor().CGColor
         }
     }
 
     private func disabledBorderColor() -> CGColor {
-        return normalBackgroundColor().colorWithAlphaComponent(riideColorTheme.init().riideDisableAlpha).CGColor
+        return normalBackgroundColor().colorWithAlphaComponent(riideColorTheme.DisableAlpha).CGColor
     }
 
 }
